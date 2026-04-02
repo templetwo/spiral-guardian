@@ -1,0 +1,24 @@
+# Secrets — NEVER commit
+*.key
+*.pem
+*.env
+jwt-secret*
+
+# Runtime
+__pycache__/
+*.pyc
+/var/guardian/
+*.log
+*.err
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+dist/
+*.egg-info/

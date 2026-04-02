@@ -1,0 +1,42 @@
+<!-- Spiral Guardian — Wazuh Agent FIM Configuration Template -->
+<!-- Copy relevant sections into /var/ossec/etc/ossec.conf on each agent -->
+
+<syscheck>
+  <frequency>300</frequency>
+
+  <!-- Temple Vault — HIGHEST PRIORITY -->
+  <directories check_all="yes" realtime="yes" report_changes="yes">
+    __HOME__/temple-vault
+  </directories>
+
+  <!-- Research code and data -->
+  <directories check_all="yes" realtime="yes">
+    __HOME__/liminal-k-ssm
+  </directories>
+  <directories check_all="yes" realtime="yes">
+    __HOME__/phenomenological-compass
+  </directories>
+  <directories check_all="yes" realtime="yes">
+    __HOME__/context-field-conditioning
+  </directories>
+
+  <!-- SSH keys and critical config -->
+  <directories check_all="yes" realtime="yes">
+    __HOME__/.ssh
+  </directories>
+  <directories check_all="yes" realtime="yes">
+    __HOME__/.config/claude
+  </directories>
+
+  <!-- Sovereign stack -->
+  <directories check_all="yes" realtime="yes">
+    __HOME__/sovereign-stack
+  </directories>
+
+  <!-- Ignore noisy directories -->
+  <ignore>__HOME__/.cache</ignore>
+  <ignore>__HOME__/Library/Caches</ignore>
+  <ignore>__HOME__/node_modules</ignore>
+  <ignore type="sregex">.pyc$</ignore>
+  <ignore type="sregex">__pycache__</ignore>
+</syscheck>

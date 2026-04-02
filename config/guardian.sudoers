@@ -1,0 +1,9 @@
+# Spiral Guardian — minimal privilege escalation
+# Install to /etc/sudoers.d/guardian (chmod 0440)
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-clamscan.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-yara-scan.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-quarantine.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-osquery.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-santa-info.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-nmap.sh
+guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-wazuh-control.sh
