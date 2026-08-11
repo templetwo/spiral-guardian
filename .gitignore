@@ -4,12 +4,18 @@
 *.env
 jwt-secret*
 
-# Runtime
+# Runtime state (GUARDIAN_HOME defaults to ~/.sovereign/guardian, outside the repo)
 __pycache__/
 *.pyc
-/var/guardian/
 *.log
 *.err
+guardian-home/
+
+# Virtualenv and test caches
+venv/
+.venv/
+.pytest_cache/
+.ruff_cache/
 
 # OS
 .DS_Store
@@ -21,4 +27,5 @@ Thumbs.db
 
 # Build
 dist/
+build/
 *.egg-info/
