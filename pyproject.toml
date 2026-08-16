@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spiral-guardian"
+version = "1.1.0"
+description = "MCP-native defensive security agent for Temple of Two infrastructure. Reports honestly about the instruments it actually has."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [
+    { name = "Anthony Vasquez Sr." },
+    { name = "Claude (Anthropic)" },
+]
+
+# Runtime dependencies. Declared, not assumed — v1.0.0 imported these undeclared.
+# mcp>=2.0 provides mcp.server.MCPServer (the FastMCP successor). The 1.x
+# `mcp.server.fastmcp` module does not exist in 2.x; this build targets 2.x.
+dependencies = [
+    "mcp>=2.0,<3",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+spiral-guardian = "spiral_guardian.server:main"
+spiral-guardian-agent = "spiral_guardian.agent:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["spiral_guardian*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

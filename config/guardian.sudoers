@@ -1,9 +1,21 @@
 # Spiral Guardian — minimal privilege escalation
-# Install to /etc/sudoers.d/guardian (chmod 0440)
-guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-clamscan.sh
+# Install to /etc/sudoers.d/guardian (chmod 0440), owned root:wheel.
+#
+# TRIMMED IN v1.1.0 TO MATCH REALITY.
+# v1.0.0 allowlisted seven wrapper scripts. Only two of them existed. The other
+# five named paths that were never written:
+#     guardian-clamscan.sh, guardian-osquery.sh, guardian-santa-info.sh,
+#     guardian-nmap.sh, guardian-wazuh-control.sh
+# A sudoers entry for a nonexistent path is not harmless: it is a standing
+# grant that activates the moment anything with write access to
+# /usr/local/bin/ creates that filename. Entries are added here only when the
+# corresponding script exists in this repo's scripts/ directory.
+#
+# NOT INSTALLED on the Mac Studio as of 2026-08-10. Until it is, the Guardian
+# tools report the quarantine and YARA capabilities as unavailable with a
+# reason, rather than blocking on an interactive sudo password prompt.
+# Installation is a privileged system change and is deliberately NOT performed
+# by any Guardian tool.
+
 guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-yara-scan.sh
 guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-quarantine.sh
-guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-osquery.sh
-guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-santa-info.sh
-guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-nmap.sh
-guardian_user ALL=(root) NOPASSWD: /usr/local/bin/guardian-wazuh-control.sh
