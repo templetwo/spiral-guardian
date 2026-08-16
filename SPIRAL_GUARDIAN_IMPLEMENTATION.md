@@ -452,29 +452,29 @@ sudo systemctl start wazuh-agent
   <frequency>300</frequency>
 
   <directories check_all="yes" realtime="yes" report_changes="yes">
-    /Users/vaquez/temple-vault
+    __HOME__/temple-vault
   </directories>
 
   <directories check_all="yes" realtime="yes">
-    /Users/vaquez/liminal-k-ssm
+    __HOME__/liminal-k-ssm
   </directories>
   <directories check_all="yes" realtime="yes">
-    /Users/vaquez/phenomenological-compass
+    __HOME__/phenomenological-compass
   </directories>
   <directories check_all="yes" realtime="yes">
-    /Users/vaquez/context-field-conditioning
+    __HOME__/context-field-conditioning
   </directories>
 
   <directories check_all="yes" realtime="yes">
-    /Users/vaquez/.ssh
+    __HOME__/.ssh
   </directories>
   <directories check_all="yes" realtime="yes">
-    /Users/vaquez/.config/claude
+    __HOME__/.config/claude
   </directories>
 
-  <ignore>/Users/vaquez/.cache</ignore>
-  <ignore>/Users/vaquez/Library/Caches</ignore>
-  <ignore>/Users/vaquez/node_modules</ignore>
+  <ignore>__HOME__/.cache</ignore>
+  <ignore>__HOME__/Library/Caches</ignore>
+  <ignore>__HOME__/node_modules</ignore>
   <ignore type="sregex">.pyc$</ignore>
   <ignore type="sregex">__pycache__</ignore>
 </syscheck>
