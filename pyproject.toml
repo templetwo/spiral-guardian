@@ -11,7 +11,7 @@ requires-python = ">=3.12"
 license = { text = "Apache-2.0" }
 authors = [
     { name = "Anthony Vasquez Sr." },
-    { name = "Claude (Anthropic)" },
+    { name = "Claude" },
 ]
 
 # Runtime dependencies. Declared, not assumed — v1.0.0 imported these undeclared.
